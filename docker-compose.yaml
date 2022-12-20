@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mongodb:
+    image: 'mongo'
+    container_name: 'mongo'
+    environment:
+      - MONGO_INITDB_DATABASE=pdf
+      - MONGO_INITDB_ROOT_USERNAME=pdf-service
+      - MONGO_INITDB_ROOT_PASSWORD=pdf-service
+    ports:
+      - '27017-27019:27017-27019'
+  redis:
+      image: 'redis'
+      container_name: 'redis'
+      ports:
+       - '6379:6379'
